@@ -1,0 +1,16 @@
+db.items.find(
+	{$and:
+		[{$or:
+			[{body: "top, outer"},
+			{body: "top, inner"}]
+		},
+		{$or:
+			[{brand: "Scotch&Soda"},
+			{brand: "Elganso"}]
+		},
+		{$and:
+			[{price: {$lte: 200}},
+			{price: {$gte: 100}}]
+		}]
+	}
+).pretty();
