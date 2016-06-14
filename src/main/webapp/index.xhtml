@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      > 
+
+<h:head>
+	<title>Pick your fashion</title>
+</h:head> 
+<body>
+	<h2>#{fashion.message}</h2>
+	<div class="filter">
+		<h:form>
+		
+			<h3>Select item category:</h3> 
+			<h:selectManyCheckbox value="#{fashion.body}">
+				<f:selectItems value="#{fashion.bodyOptions}" />
+			</h:selectManyCheckbox>
+			
+			<h3>Select brands:</h3>
+			<h:selectManyCheckbox value="#{fashion.brand}">
+				<f:selectItems value="#{fashion.brandOptions}" />
+			</h:selectManyCheckbox>
+			
+			<h3>Select min. price (euro)</h3>
+			<h:inputText value="#{fashion.minPrice}" />
+			
+			<h3>Select max. price (euro)</h3>
+			<h:inputText value="#{fashion.maxPrice}" />
+			
+			<br/><br/>
+			<h:commandButton action="#{fashion.searchByFilter()}" value="Search by filter" />
+		</h:form>
+	</div>
+	<div class="results">
+		<ul>
+			<ui:repeat value="#{fashion.items}" var="item">
+				<li>
+					<h:outputText value="#{item.name}" /><br/>
+					<h:outputText value="Description: #{item.description}" /><br/>
+					<img src="#{item.image}"/>
+				</li>
+			</ui:repeat>
+		</ul>
+	</div>
+</body> 
+</html>
