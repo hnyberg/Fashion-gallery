@@ -5,16 +5,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import javax.ejb.EJB;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.inject.Named;
 
 import com.fashion.model.*;
 
-@Named
-@SessionScoped
+@RequestScoped
+@ManagedBean
 public class FashionBean implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
+	
 	private String message = "Welcome, fashionist!";
 	private String minPrice = "0";
 	private String maxPrice = "5000";
@@ -221,11 +224,13 @@ public class FashionBean implements Serializable{
 
 		@Override
 		public String toString() {
-			return "Item [id=" + id + ", name=" + name + ", description=" + description + ", body=" + body + ", brand="
-					+ brand + ", price=" + price + ", image=" + image + ", url=" + url + ", user=" + user + "]";
+			return "Item [id=" + id + ", name=" + name 
+					+ ", description=" + description 
+					+ ", body=" + body + ", brand="
+					+ brand + ", price=" + price + ", image=" 
+					+ image + ", url=" + url + ", user=" 
+					+ user + "]";
 		}
-		
-		
 	}
 
 	public String searchByFilter(){
@@ -237,9 +242,7 @@ public class FashionBean implements Serializable{
 		inputMap.put(dao.STRING_KEY_MAX_PRICE, maxPrice);
 		
 		ArrayList<HashMap<String, String>> listOfResultMaps = dao.searchMongo(inputMap);
-//		System.out.println("Map size: " + listOfResultMaps.size());
 		
-		int i = 0;
 		items.clear();
 		for (HashMap<String, String> currMap : listOfResultMaps) {
 			items.add(new Item(
@@ -253,11 +256,7 @@ public class FashionBean implements Serializable{
 					currMap.get(dao.STRING_KEY_MAIN_URL),
 					currMap.get(dao.STRING_KEY_USER)
 					));
-//			System.out.println(i++);
 		}
-//		for (Item item : items) {
-//			System.out.println(item);
-//		}
 		
 		return "index";
 	}

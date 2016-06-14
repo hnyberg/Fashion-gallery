@@ -1,0 +1,92 @@
+body {
+	background: url(sunset.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+  	background-size: cover;
+	background-color: #111;
+}
+.results {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 0;
+}
+.subMain {
+	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	border-radius: 15px;
+	background-color: rgba(0,0,0,0.9);
+}
+header, footer {
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+article {
+	margin-left: 40px;
+}
+table {
+	margin: auto;
+}
+label, input, button, .load {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.item {
+	text-align: left;
+	margin: auto;
+	margin: 5px;
+	padding: 10px;
+	border-radius: 10px;
+	border: solid rgba(250,180,120,0.5) 3px;
+	background-color: rgba(0,0,0,0.7);
+}
+#ratingTable {
+	width: 200px;
+}
+h1, h2, h3, p, a, td, label {
+	color: #E96;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+h1 {
+	font-size: 25px;
+	text-align: center;
+	color: #9AA;
+}
+.headerTitle {
+	font-size: 30px;
+}
+
+/* Adjust sections' widths */
+@media (max-width: 600px) {
+	.subMain {
+		width: 250px;
+	}
+	table {
+		width: 200px;
+	}
+}
+@media (max-width: 800px) and (min-width: 601px) {
+	.subMain {
+		width: 350px;
+	}
+	table {
+		width: 300px;
+	}
+}
+@media (min-width: 801px) {
+	.subMain {
+		width: 450px;
+	}
+	table {
+		width: 400px;
+	}
+}

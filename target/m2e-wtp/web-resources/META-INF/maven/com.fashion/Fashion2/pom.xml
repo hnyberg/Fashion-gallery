@@ -1,12 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.fashion</groupId>
-  <artifactId>Fashion2</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
-  <dependencies>
-  
-	    <dependency>
+	<modelVersion>4.0.0</modelVersion>
+ 	<groupId>com.fashion</groupId>
+ 	<artifactId>Fashion2</artifactId>
+ 	<version>0.0.1-SNAPSHOT</version>
+ 	<packaging>war</packaging>
+ 	
+  	<dependencies>
+  	
+  		<dependency>
 	        <groupId>org.mongodb</groupId>
 	        <artifactId>mongodb-driver</artifactId>
 	        <version>3.2.2</version>
@@ -42,6 +43,6 @@
 		    <version>2.0-EDR1</version>
 		</dependency>
   
-  </dependencies>
+	</dependencies>
   
 </project>

@@ -5,44 +5,49 @@
       xmlns:h="http://java.sun.com/jsf/html"
       > 
 
-<h:head>
-	<title>Pick your fashion</title>
-</h:head> 
-<body>
-	<h2>#{fashion.message}</h2>
-	<div class="filter">
-		<h:form>
+	<h:head>
+		<title>Pick your fashion</title>
+	</h:head> 
+	<h:body>
+		<h:outputStylesheet library="css" name="style.css" />
+		<h2>#{fashionBean.message}</h2>
+		<div class="filter">
+			<h:form>
 		
-			<h3>Select item category:</h3> 
-			<h:selectManyCheckbox value="#{fashion.body}">
-				<f:selectItems value="#{fashion.bodyOptions}" />
-			</h:selectManyCheckbox>
-			
-			<h3>Select brands:</h3>
-			<h:selectManyCheckbox value="#{fashion.brand}">
-				<f:selectItems value="#{fashion.brandOptions}" />
-			</h:selectManyCheckbox>
-			
-			<h3>Select min. price (euro)</h3>
-			<h:inputText value="#{fashion.minPrice}" />
-			
-			<h3>Select max. price (euro)</h3>
-			<h:inputText value="#{fashion.maxPrice}" />
-			
-			<br/><br/>
-			<h:commandButton action="#{fashion.searchByFilter()}" value="Search by filter" />
-		</h:form>
-	</div>
-	<div class="results">
-		<ul>
-			<ui:repeat value="#{fashion.items}" var="item">
-				<li>
-					<h:outputText value="#{item.name}" /><br/>
-					<h:outputText value="Description: #{item.description}" /><br/>
-					<img src="#{item.image}"/>
-				</li>
-			</ui:repeat>
-		</ul>
-	</div>
-</body> 
+				<h3>Select item category:</h3> 
+				<h:selectManyCheckbox value="#{fashionBean.body}">
+					<f:selectItems value="#{fashionBean.bodyOptions}" />
+				</h:selectManyCheckbox>
+				
+				<h3>Select brands:</h3>
+				<h:selectManyCheckbox value="#{fashionBean.brand}">
+					<f:selectItems value="#{fashionBean.brandOptions}" />
+				</h:selectManyCheckbox>
+				
+				<h3>Select min. price (euro)</h3>
+				<h:inputText value="#{fashionBean.minPrice}" />
+				
+				<h3>Select max. price (euro)</h3>
+				<h:inputText value="#{fashionBean.maxPrice}" />
+				
+				<br/><br/>
+				<h:commandButton action="#{fashionBean.searchByFilter()}" value="Search by filter" />
+			</h:form>
+		</div>
+		<div class="results">
+			<ul>
+				<ui:repeat value="#{fashionBean.items}" var="item">
+					<li>
+						<img src="#{item.image}"/><br/>
+						<h3><h:outputText value="#{item.name}" /><br/></h3>
+						<h:outputText value="Description: #{item.description}" /><br/>
+						<h:outputText value="Item type: #{item.body}" /><br/>
+						<h:outputText value="Brand: #{item.brand}" /><br/>
+						<h:outputText value="Price: #{item.price}" /><br/>
+						<h:outputText value="ID: #{item.id}" /><br/>
+					</li>
+				</ui:repeat>
+			</ul>
+		</div>
+	</h:body> 
 </html>
