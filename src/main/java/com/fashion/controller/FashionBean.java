@@ -12,7 +12,7 @@ import javax.inject.Named;
 
 import com.fashion.model.*;
 
-@RequestScoped
+@SessionScoped
 @ManagedBean
 public class FashionBean implements Serializable{
 	
