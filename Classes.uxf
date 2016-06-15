@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>150</y>
+      <w>230</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Index.xhtml
+--
+selectManyCheckbox (body, brand) 
+inputText (minPrice, maxPrice)
+commandButton (Filter)
+--
+selectCategory()
+selectBrand()
+setMinPrice()
+setMaxPrice()
+filter()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>360</y>
+      <w>220</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>FashionBean.java
+--
+String minPrice = "0";
+String maxPrice = "5000";
+ArrayList&lt;String&gt; body;
+ArrayList&lt;String&gt; brand;
+ArrayList&lt;String&gt; bodyOptions;
+ArrayList&lt;String&gt; brandOptions;
+ArrayList&lt;Item&gt; items;
+MongoDAO dao;
+--
+Constructor()
+Getters
+Setters
+SearchByFilter()
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>220</y>
+      <w>120</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>REST.java
+--
+?
+--
+?</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>360</y>
+      <w>280</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>MongoDAO.java
+--
+MongoClient
+MongoDatabase
+MongoColelction
+--
+SearchMongo( Hashmap&lt;String, Object&gt; 
+-&gt;	ArrayList&lt;Hashmap&lt;String, String&gt;&gt;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>690</x>
+      <y>130</y>
+      <w>170</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>Fashion.db
+--
+item:
+	name: hat,
+	description: grey,
+	body: head,
+	brand: Esprit,
+	price: 15,
+	image: www.image.com,
+	url: www.article.com
+--
+fashion.items.find(filter)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>300</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>300</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>300</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.&gt;</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>300</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+</diagram>
